@@ -1,0 +1,18 @@
+import pandas as pd
+
+df = pd.read_csv("C:/Users/Gags' Predator/Downloads/Iris3.csv")
+df.loc[46, 'sepal length'] = df.at[46, 'sepal length'] + 1
+df.loc[46, 'sepal width'] = df.at[46, 'sepal width'] - 0.5
+df.loc[46, 'petal length'] = df.at[46, 'petal length'] + 1
+df.loc[46, 'petal width'] = df.at[46, 'petal width'] - 0.5
+sl = df.loc[46, 'sepal length']
+sw = df.loc[46, 'sepal width']
+pl = df.loc[46, 'petal length']
+pw = df.loc[46, 'petal width']
+ar1 = sl * sw
+ar2 = pl * pw
+df.insert(7, "New SArea", ar1, False)
+df.insert(8, "New PArea", ar2, False)
+df.loc[1:, 'New SArea'] = 'Nan'
+df.loc[1:, 'New PArea'] = 'Nan'
+df.to_csv("C:/Users/Gags' Predator/Downloads/Iris3.csv", index=False)

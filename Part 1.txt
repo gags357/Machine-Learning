@@ -1,0 +1,12 @@
+import pandas as pd
+
+df = pd.read_csv("C:/Users/Gags' Predator/Downloads/Iris1.csv")
+sl = df['sepal length']
+sw = df['sepal width']
+ar1 = sl * sw
+df.insert(7, "SArea", ar1, True)
+pl = df['petal length']
+pw = df['petal width']
+ar2 = pl * pw
+df.insert(8, "PArea", ar2, True)
+df.to_csv("C:/Users/Gags' Predator/Downloads/Iris1.csv", index=False)
